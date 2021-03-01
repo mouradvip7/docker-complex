@@ -11,7 +11,7 @@ before_install:
 script:
   - docker run -e CI=true  mouradvip7/react-test npm test -- --coverage
 
-after_succes:
+after_success:
   - docker build -t mouradvip7/multi-client ./client
   - docker build -t mouradvip7/multi-nginx ./nginx
   - docker build -t mouradvip7/multi-server ./server
